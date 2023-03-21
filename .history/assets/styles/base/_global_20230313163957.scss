@@ -1,0 +1,36 @@
+/*
+GLOBAL STYLES
+-------------------------------------------- */
+html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    overflow-x: hidden; position: relative;
+    background-color: $color-primary;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wrapper {
+    width: 1320px; max-width: calc(100% - 120px);
+    margin: 0 auto; padding: 0 20px;
+    @include box-sizing();
+}
+
+.parallax {
+    @include visibility();
+}
+
+
+.main-content{
+    min-height: 100vh;
+    @include flexbox();
+    @include justify(center);
+    align-items: center;
+
+    .logo-holder{
+        #logo{
+            width: 330px; height: 150px;
+        }
+    }
+}

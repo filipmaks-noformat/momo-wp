@@ -1,0 +1,28 @@
+/*
+FOOTER
+-------------------------------------------- */
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0; left: 0;
+    z-index: 1;
+    padding-bottom: 40px;
+    .holder{
+        position: relative;
+        @include flexbox();
+        @include justify(space-between);
+        align-items: center;
+
+        p{
+            opacity: 0.43;
+
+            &.bold{
+                opacity: 1;
+                position: absolute;
+                left: 50%;
+                @include transform($x: -50%);
+            }
+        }
+    }
+}

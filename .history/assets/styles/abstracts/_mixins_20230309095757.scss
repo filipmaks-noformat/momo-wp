@@ -1,0 +1,207 @@
+// 
+// 
+// STANDARD MIXING
+// 
+// 
+
+//RESPONSIVE
+    @mixin breakpoint($point){
+        @if $point == 1920{
+            @media (max-width: 1920px){@content ;}
+        } @else if $point == 1440{
+            @media (max-width: 1440px){@content ;}
+        } @else if $point == 1400{
+            @media (max-width: 1400px){@content ;}
+        } @else if $point == 1366{
+            @media (max-width: 1366px){@content ;}
+        } @if $point == 1200{
+            @media (max-width: 1200px){@content ;}
+        } @else if $point == 1024{
+            @media (max-width: 1024px){@content ;}
+        } @else if $point == 960{
+            @media (max-width: 960px){@content ;}
+        } @else if $point == 768{
+            @media (max-width: 1024px) and (orientation: portrait){@content ;}
+        } @else if $point == ipadpro{
+            @media (max-width: 1024px){@content ;}
+        } @else if $point == 640{
+            @media (max-width: 640px){@content ;}
+        } @else if $point == 480{
+            @media (max-width: 480px){@content ;}
+        } @else if $point == 420 {
+            @media (max-width: 420px){@content ;}
+        } @else if $point == medium-mobile{
+            @media (max-width: 375px){@content ;}
+        }@else if $point == small-mobile{
+            @media (max-width: 320px){@content ;}
+        }
+    }
+    
+//ELEMENTS FOR MIXINS
+    //Standard Vendors
+        $vendors: "-webkit-", "-moz-";
+    //Other Vendors
+        $ms-vendor: "-ms-";
+        $o-vendor: "-o-";
+
+//BEHAVIOR
+    //Transform
+        @mixin transform($x: 0px, $y: 0px, $z: 0px, $r: 0deg, $rx: 0deg, $ry: 0deg, $rz: 0deg, $sx: 1, $sy: 1){
+            transform: translateX($x) translateY($y) translateZ($z) rotate($r) rotateX($rx) rotateY($ry) rotateZ($rz) scale($sx, $sy);
+        }
+
+    //Transition
+
+        @mixin transition($transition...) {
+            transition:         $transition;
+        }
+        @mixin transition-property($property...) {
+            transition-property:         $property;
+        }
+        @mixin transition-duration($duration...) {
+            transition-duration:         $duration;
+        }
+        @mixin transition-timing-function($timing...) {
+            transition-timing-function:         $timing;
+        }
+        @mixin transition-delay($delay...) {
+            transition-delay:         $delay;
+        }
+    //Transform origin
+        @mixin origin($origin){
+            transform-origin: $origin;
+        }
+
+    //Backface-visibility - by default is hidden enter visible to change
+        @mixin visibility($visibility: hidden){
+            backface-visibility: $visibility;
+        }
+
+    //Box-sizing - by default is border-box to change enter value: content-box | padding-box
+        @mixin box-sizing($sizing: border-box){
+            box-sizing: $sizing;
+        }
+
+    //Clearfix
+        @mixin micro-clearfix{
+            &:before,
+            &:after {
+                content: "";
+                display: table;
+            }
+            &:after {
+                clear: both;
+            }
+        }
+
+//IMAGES MANIPULATION
+    //Background size - by default is cover to change enter value: auto | length | cover | contain | initial | inherit
+        @mixin bgr-size ($bgsize: cover) {
+            background-size: $bgsize;
+        }
+    //Background standard setings
+        @mixin bgr($repeat: no-repeat, $position: 50% 50%, $color: transparent, $size: cover){
+            background-repeat: $repeat;
+            background-position: $position;
+            background-color: $color;
+            @include bgr-size($size);
+        }
+
+//PSEUDO ELEMENTS
+    //Standard call for pseudo element
+        @mixin pseudo($display: block, $pos: absolute, $content: ''){
+            content : $content;
+            display : $display;
+            position: $pos;
+        }
+
+//POSITIONS
+    //position reset
+        @mixin position-reset(){
+            position: relative;
+            top: auto; right: auto; bottom: auto; left: auto; 
+        }
+        @mixin margin-auto(){
+            margin-left: auto; margin-right: auto;
+        }
+//FLEX
+    //flexbox
+        @mixin flexbox(){
+            display: flex;
+        }
+    //flex flow (direction and flow together) - by default is row and wrap to change enter value for direction : row-reverse | column | column-reverse and for flow: wrap | wrap-reverse
+        @mixin flex-flow($direction: row, $flow: nowrap){
+            flex-flow: $direction $flow;
+        }
+    //flex item
+        @mixin flex($grow: 0, $shrink: 1, $basis: auto, $none: false){
+            @if $none{
+                flex: none;
+            }
+            @else {
+                flex: $grow $shrink $basis;
+            }
+        }
+    //Justify-content - by default is flex to change enter value: flex-start | flex-end | center | space-between | space-around | space-evenly
+        @mixin justify($justify: flex-start){
+            justify-content: $justify;
+        }
+    //Aligne-item - by default is stretch to change enter value: flex-start | flex-end | center | baseline 
+        @mixin align-item($align-item: stretch){
+            align-items: $align-item;
+        }
+    //Align-self - by default is auto to change enter value: flex-start | flex-end | center | baseline | stretch
+        @mixin align-self($align-selfe: auto){
+            align-self: $align-selfe;
+        }
+    //Align-content - by default is stretch to change enter value: flex-start | flex-end | center | space-between | space-around 
+        @mixin align($align: stretch){
+            align-content: $align;
+        }
+    //Order
+        @mixin order($order: 1){ 
+            order: $order;
+        }
+
+//COLORS
+    //Gradients
+        @mixin gradient($start-color, $end-color, $orientation){
+            background: $start-color;
+            @if $orientation == vertical{
+                background: linear-gradient(to bottom,  $start-color 0%,$end-color 100%);
+            } @else if $orientation == horizontal{
+                background: linear-gradient(to right,  $start-color 0%,$end-color 100%);
+            } @else {
+                background: radial-gradient(ellipse at center,  $start-color 0%,$end-color 100%);
+            }
+        }
+
+//SHADOW
+    //box-shadow
+        @mixin box-shadow($x: 0, $y: 0, $b: 0, $s: 0, $color: transparent, $op: 0){
+            box-shadow:  $x $y $b $s rgba($color, $op);
+        }
+
+//PLACEHOLDER
+    //placeholder
+		@mixin placeholder {
+			&.placeholder { @content }
+		}
+
+
+// 
+// 
+// SITE SPECIFIC MIXING PLEASE ADD UNDER SAME FOLDER CUSTOM.SCSS
+// 
+// 
+
+
+//TYPE OF COMMENTS
+    /* This comment is
+    * several lines long.
+    * since it uses the CSS comment syntax,
+    * it will appear in the CSS output. */
+
+    // These comments are only one line long each.
+    // They won't appear in the CSS output,
+    // since they use the single-line comment syntax.

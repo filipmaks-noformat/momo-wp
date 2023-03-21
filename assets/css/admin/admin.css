@@ -1,0 +1,131 @@
+body.block-editor-page .editor-styles-wrapper {
+  /* This comment is
+  * several lines long.
+  * since it uses the CSS comment syntax,
+  * it will appear in the CSS output. */
+  /*
+  IMPORT FONTS
+  -------------------------------------------- */
+  /*
+  GLOBAL STYLES
+  -------------------------------------------- */
+  /*
+  BUTTONS GLOBAL
+  -------------------------------------------- */
+}
+@font-face {
+  font-family: "Mango Style Extra Light";
+  font-style: normal;
+  font-weight: 100;
+  src: url("../webfonts/MangoStyle-ExtraLight.eot"); /* IE9 Compat Modes */
+  src: local(""), url("../webfonts/MangoStyle-ExtraLight.eot?#iefix") format("embedded-opentype"), url("../webfonts/MangoStyle-ExtraLight.woff2") format("woff2"), url("../webfonts/MangoStyle-ExtraLight.woff") format("woff"), url("../webfonts/MangoStyle-ExtraLight.ttf") format("truetype"), url("../webfonts/MangoStyle-ExtraLight.svg#CormorantGaramond") format("svg"); /* Legacy iOS */
+}
+body.block-editor-page .editor-styles-wrapper body {
+  font-family: "Mango Style Extra Light", Arial, sans-serif;
+}
+body.block-editor-page .editor-styles-wrapper p {
+  font-size: 0.8333333333vw;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+@media (min-width: 2560px) {
+  body.block-editor-page .editor-styles-wrapper p {
+    font-size: 21.3333333333px;
+  }
+}
+body.block-editor-page .editor-styles-wrapper .tablet.portrait p, body.block-editor-page .editor-styles-wrapper .mobile p {
+  font-size: 10px;
+  line-height: 1.2;
+}
+body.block-editor-page .editor-styles-wrapper html {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+body.block-editor-page .editor-styles-wrapper body {
+  overflow-x: hidden;
+  position: relative;
+  background-color: #FDEFE4;
+  -webkit-overflow-scrolling: touch;
+}
+body.block-editor-page .editor-styles-wrapper .wrapper {
+  width: calc(100% - 120px);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+@media (max-width: 640px) {
+  body.block-editor-page .editor-styles-wrapper .wrapper {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+body.block-editor-page .editor-styles-wrapper .parallax {
+  backface-visibility: hidden;
+}
+body.block-editor-page .editor-styles-wrapper .main-content {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body.block-editor-page .editor-styles-wrapper .main-content .logo-holder #logo {
+  width: 22.9166666667vw;
+  min-width: 330px;
+}
+@media (min-width: 2560px) {
+  body.block-editor-page .editor-styles-wrapper .main-content .logo-holder #logo {
+    width: 586.6666666667px;
+  }
+}
+@media (max-width: 640px) {
+  body.block-editor-page .editor-styles-wrapper .main-content .logo-holder #logo {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+body.block-editor-page .editor-styles-wrapper .main-content .logo-holder .copy-text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding-bottom: 40px;
+  transform: translateX(-50%) translateY(20px) translateZ(0px) rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1, 1);
+  opacity: 0;
+}
+@media (max-width: 1024px) and (orientation: portrait) {
+  body.block-editor-page .editor-styles-wrapper .main-content .logo-holder .copy-text {
+    position: relative;
+    text-align: center;
+    bottom: auto;
+    left: auto;
+    transform: translateX(0px) translateY(20px) translateZ(0px) rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1, 1);
+  }
+}
+@media (max-width: 1024px) and (orientation: portrait) {
+  body.block-editor-page .editor-styles-wrapper .main-content .logo-holder .copy-text p {
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+body.block-editor-page .editor-styles-wrapper .anim-finished footer {
+  opacity: 1;
+  transform: translateX(0px) translateY(0px) translateZ(0px) rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1, 1);
+  transition: all 1s 0s ease;
+}
+body.block-editor-page .editor-styles-wrapper .anim-finished .main-content .logo-holder .copy-text {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0px) translateZ(0px) rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1, 1);
+  transition: all 1s 0s ease;
+}
+@media (max-width: 1024px) and (orientation: portrait) {
+  body.block-editor-page .editor-styles-wrapper .anim-finished .main-content .logo-holder .copy-text {
+    transform: translateX(0px) translateY(0px) translateZ(0px) rotate(0deg) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1, 1);
+  }
+}
+body.block-editor-page .edit-post-visual-editor a {
+  text-decoration: none;
+}
+
+.wp-block {
+  max-width: 90%;
+}

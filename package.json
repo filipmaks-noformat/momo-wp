@@ -1,0 +1,20 @@
+{
+	"name": "noformat",
+	"version": "1.0.0",
+	"description": "Noformat",
+	"main": "index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch-main": "sass ./assets/styles/main.scss ./assets/css/main.css -w --source-map --style=compressed",
+		"watch-admin": "sass ./assets/styles/admin/admin.scss ./assets/css/admin/admin.css -w --no-source-map",
+		"scss:watch": "npm-run-all -p watch-main watch-admin"
+	},
+	"author": "Noformat",
+	"license": "MIT",
+	"dependencies": {
+		"npm-run-all": "^4.1.5"
+	},
+	"devDependencies": {
+		"sass": "^1.43.4"
+	}
+}

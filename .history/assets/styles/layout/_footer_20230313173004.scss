@@ -1,0 +1,41 @@
+/*
+FOOTER
+-------------------------------------------- */
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0; left: 0;
+    z-index: 1;
+    padding-bottom: 40px;
+    @include transform($y: 20px);
+    opacity: 0;
+    .holder{
+        position: relative;
+        @include flexbox();
+        @include justify(space-between);
+        align-items: center;
+        flex-wrap: wrap;
+        @include breakpoint(640){
+            @include justify(center);
+            text-align: center;
+        }
+
+        p{
+            opacity: 0.43;
+
+            &:first-child{
+                @include breakpoint(640){
+                    order: 2;
+                }
+            }
+
+            &:last-child{
+                @include breakpoint(640){
+                    order: 1;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

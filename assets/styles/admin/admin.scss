@@ -1,0 +1,20 @@
+// Import typography for admin
+body.block-editor-page {
+	.editor-styles-wrapper{
+		@import '../abstracts/main.scss';
+		@import '../base/_typography.scss';
+		@import '../base/_global.scss';
+		@import '../components/_buttons.scss';
+		@import '../blocks/main.scss'; 
+	}
+	.edit-post-visual-editor {
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+// Make block spead end to end
+.wp-block {
+	max-width: 90%;
+}

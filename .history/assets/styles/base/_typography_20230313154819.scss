@@ -1,0 +1,55 @@
+/*
+IMPORT FONTS
+-------------------------------------------- */
+$font-primary:		'Montserrat', Arial, Helvetica, sans-serif;
+
+
+body,
+input,
+select,
+button,
+textarea {
+	font-family: $font-primary;  font-weight: 300;
+}
+
+.entry {
+	h3 {
+		margin-bottom: 20px;
+		font-size: 66px; line-height: 64px; letter-spacing: -1.5px; font-weight: 900; color: $color-primary; text-transform: uppercase;
+	}
+	p,
+	ol li,
+	ul li {
+		margin-bottom: 20px;
+		font-size: 16px; line-height: 32px; 
+		strong {
+			font-weight: 700;
+		}
+	}
+	ol,
+	ul {
+		margin-bottom: 20px; padding-left: 30px;
+		li {
+			margin-bottom: 0;
+			list-style-type: disc;
+		}
+	}
+}
+
+.animated {
+	h3,
+	p,
+	li {
+		opacity: 0;
+		@include transform($y: -100%);
+		@include transition(1500ms cubic-bezier(0.215, 0.61, 0.355, 1));
+	}
+	&.in-view {
+		h3,
+		p,
+		li {
+			opacity: 1;
+			@include transform();
+		}
+	}
+}

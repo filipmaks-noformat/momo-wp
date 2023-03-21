@@ -1,0 +1,22 @@
+/*
+IMPORT FONTS
+-------------------------------------------- */
+
+@font-face {
+	font-family: 'Mango Style Light';
+	font-style: normal;
+	font-weight: 200;
+	src: url('../webfonts/MangoStyle-Light.eot'); /* IE9 Compat Modes */
+	src: local(''),
+		url('../webfonts/MangoStyle-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		url('../webfonts/MangoStyle-Light.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../webfonts/MangoStyle-Light.woff') format('woff'), /* Modern Browsers */
+		url('../webfonts/MangoStyle-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../webfonts/MangoStyle-Light.svg#CormorantGaramond') format('svg'); /* Legacy iOS */
+}
+
+$font-primary: 		'Mango Style Light', Arial, sans-serif;
+
+p{
+	font-size: 12px; line-height: 1;
+}

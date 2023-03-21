@@ -1,0 +1,38 @@
+/*
+FOOTER
+-------------------------------------------- */
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0; left: 0;
+    z-index: 1;
+    padding-bottom: 40px;
+    @include transform($y: 20px);
+    opacity: 0;
+    .holder{
+        position: relative;
+        @include flexbox();
+        @include justify(space-between);
+        align-items: center;
+
+        p{
+            opacity: 0.43;
+
+            &.bold{
+                opacity: 1;
+                position: absolute;
+                left: 50%;
+                @include transform($x: -50%);
+            }
+        }
+    }
+}
+
+.anim-finished{
+    footer{
+        opacity: 1;
+        @include transform();
+        @include transition(all, 1s 0s ease);
+    }
+}

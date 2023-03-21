@@ -1,0 +1,78 @@
+/*
+GLOBAL STYLES
+-------------------------------------------- */
+html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    overflow-x: hidden; position: relative;
+    background-color: $color-primary;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wrapper {
+    width: calc(100% - 120px);
+    margin: 0 auto;
+    @include box-sizing();
+
+    @include breakpoint(640){
+        width: 100%;
+        padding: 0 40px;
+    }
+}
+
+.parallax {
+    @include visibility();
+}
+
+
+.main-content{
+    min-height: 100vh;
+    @include flexbox();
+    @include justify(center);
+    align-items: center;
+
+    .logo-holder{
+        #logo{
+            width: 330px; height: 150px;
+
+            @include breakpoint(640){
+                width: 100%;
+            }
+        }
+
+        .copy-text{
+            position: absolute;
+            bottom: 0; left: 50%;
+            padding-bottom: 40px;
+            @include transform($x: -50%, $y: 20px);
+            opacity: 0;
+
+            @include breakpoint(640){
+                position: relative;
+                text-align: center;
+                bottom: auto; left: auto;
+                @include transform($y: 20px);
+            }
+        }
+    }
+}
+
+.anim-finished{
+    footer{
+        opacity: 1;
+        @include transform();
+        @include transition(all 1s 0s ease);
+    }
+
+   .main-content .logo-holder .copy-text{
+        opacity: 1;
+        @include transform($x: -50%);
+        @include transition(all 1s 0s ease);
+
+        @include breakpoint(640){
+            @include transform();
+        }
+    }
+}

@@ -1,0 +1,102 @@
+/*
+GLOBAL STYLES
+-------------------------------------------- */
+html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    overflow-x: hidden; position: relative;
+    background-color: $color-primary;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wrapper {
+    width: calc(100% - 120px);
+    margin: 0 auto;
+    @include box-sizing();
+
+    @include breakpoint(640){
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+.parallax {
+    @include visibility();
+}
+
+
+.main-content{
+    // position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    @include flexbox();
+    @include justify(center);
+    align-items: center;
+
+    .logo-holder{
+
+        #logo{
+            width: p(330); min-width: 330px;
+            // height: 150px;
+
+            @include breakpoint(max){
+                width: m(330);
+            }
+
+            @include breakpoint(640){
+                width: 90%;
+                margin: 0 auto;
+            }
+        }
+
+        .copy-text{
+            position: absolute;
+            bottom: 0; left: 50%;
+            padding-bottom: 40px;
+            @include transform($x: -50%, $y: 20px);
+            opacity: 0;
+
+            @include breakpoint(768){
+                position: relative;
+                text-align: center;
+                bottom: auto; left: auto;
+                @include transform($y: 20px);
+            }
+            
+            p{
+                @include breakpoint(768){
+                    font-size: 14px; line-height: 1;
+                }
+            }
+        }
+    }
+}
+
+.anim-finished{
+    footer{
+        opacity: 1;
+        @include transform();
+        @include transition(all 1s 0s ease);
+    }
+
+   .main-content .logo-holder .copy-text{
+        opacity: 1;
+        @include transform($x: -50%);
+        @include transition(all 1s 0s ease);
+
+        @include breakpoint(768){
+            @include transform();
+        }
+    }
+}
+
+.tablet.portrait, .mobile{
+    .main-content{
+        min-height: unset;
+        .logo-holder{
+            position: fixed;
+        }
+    }   
+}

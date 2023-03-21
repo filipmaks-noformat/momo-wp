@@ -1,0 +1,79 @@
+/*
+GLOBAL STYLES
+-------------------------------------------- */
+html {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    overflow-x: hidden; position: relative;
+    background-color: $color-primary;
+    -webkit-overflow-scrolling: touch;
+}
+
+.wrapper {
+    max-width: 1360px;
+    margin: 0 auto; padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.parallax {
+    @include visibility();
+}
+
+.loading-holder {
+    position: fixed; top: 0; left: 0; overflow: hidden; 
+    z-index: 9999;
+    width: 100%; height: 100%;
+    //background: $color-dark;
+    background: $color-primary;
+    @include visibility();
+    @include transition(transform 1000ms cubic-bezier(0.215, 0.610, 0.355, 1.000));
+    .loader-holder {
+        position: absolute; left: 0px; top: 0px;
+        width: 100%; height: 100%;
+        @include visibility();
+        @include transition(transform 1000ms cubic-bezier(0.215, 0.610, 0.355, 1.000));
+        #loader {
+            position: absolute; left: 50%; top: 50%; left: 50%;
+            width: 500px; height: auto;
+            @include transform($x: -50%, $y: -50%);
+            @include breakpoint(640) {
+                width: 300px;
+            }
+        }
+    }
+    .loader-overlay {
+        position: absolute; top: 0; left: 0;
+        width: 100%; height: 100%;
+        //background: $color-dark;
+        }
+    .loader {
+        position: absolute; top: 0; left: 0;
+        width: 100%; height: 100%;
+        }
+    .progress-notification {
+        display: none;
+    }
+    .progress-bar {
+        position: absolute; top: 0; 
+        width: 100%; height: 0;
+    }
+    .progress-loaded {
+        position: relative;
+        width: 0; height: 100%;
+        //border-bottom: 2px solid $color-primary;
+    }
+    &.transparent {
+        background: none;
+    }
+}		
+
+.hide-loader {
+    .loading-holder {
+        @include transform($y: -100%);
+        .loader-holder {
+            @include transform($y: 100%);
+        }
+    }
+}

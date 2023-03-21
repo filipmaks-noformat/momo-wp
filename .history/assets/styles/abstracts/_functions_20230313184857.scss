@@ -1,0 +1,11 @@
+@function p($pixels) {
+    $designWidth: 1440;
+    $result: ($pixels * 100 / $designWidth) * 1vw;
+    @return $result;
+}
+
+@function m($pixels) {
+    $designWidth: 1440;
+    $result: (2560 / $designWidth) * $pixels * 1px;
+    @return $result;
+}
